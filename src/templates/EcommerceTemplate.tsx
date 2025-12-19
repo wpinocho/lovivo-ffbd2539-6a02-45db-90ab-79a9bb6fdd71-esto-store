@@ -45,7 +45,7 @@ export const EcommerceTemplate = ({
   const { hasCollections, loading: loadingCollections } = useCollections()
 
   const header = (
-    <div className={`py-2 ${headerClassName}`}>
+    <div className={`py-4 bg-background/95 backdrop-blur-sm border-b ${headerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -57,20 +57,20 @@ export const EcommerceTemplate = ({
               {!loadingCollections && hasCollections && (
                 <ScrollLink 
                   to="/#collections" 
-                  className="text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-foreground/70 hover:text-foreground transition-colors font-medium"
                 >
-                  Collections
+                  Colecciones
                 </ScrollLink>
               )}
               <ScrollLink 
                 to="/#products" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors font-medium"
               >
-                Products
+                Productos
               </ScrollLink>
               <Link 
                 to="/blog" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors font-medium"
               >
                 Blog
               </Link>
@@ -113,26 +113,28 @@ export const EcommerceTemplate = ({
   )
 
   const footer = (
-    <div className={`bg-black text-white py-12 ${footerClassName}`}>
+    <div className={`bg-black text-white py-16 ${footerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <BrandLogoLeft />
+            <div className="mb-4">
+              <span className="text-2xl font-black tracking-tight">ESSENTIALS</span>
+            </div>
             <p className="mt-4 text-white/70">
-              Your trusted online store
+              Urban streetwear. Calidad premium.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Links</h3>
+            <h3 className="font-bold mb-4 text-white uppercase tracking-wide text-sm">Enlaces</h3>
             <div className="space-y-2">
               <Link 
                 to="/" 
                 className="block text-white/70 hover:text-white transition-colors"
               >
-                Home
+                Inicio
               </Link>
               <Link 
                 to="/blog" 
@@ -145,13 +147,13 @@ export const EcommerceTemplate = ({
 
           {/* Social Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
+            <h3 className="font-bold mb-4 text-white uppercase tracking-wide text-sm">Síguenos</h3>
             <SocialLinks />
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/20 text-center text-white/70">
-          <p>&copy; 2025 Your Store. All rights reserved.</p>
+          <p>&copy; 2025 Essentials Store. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>

@@ -63,8 +63,8 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
       <SheetContent side="right" className="w-full sm:w-96 p-0" aria-describedby="cart-description">
         <div className="flex flex-col h-full">
           <SheetHeader className="p-6 border-b">
-            <SheetTitle className="flex items-center gap-2">
-              Shopping Cart
+            <SheetTitle className="flex items-center gap-2 font-black uppercase tracking-tight">
+              Carrito de Compras
               <Link to="/cart" onClick={onClose} className="hover:opacity-70 transition-opacity">
                 <ExternalLink className="h-4 w-4" />
               </Link>
@@ -77,14 +77,14 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
           {state.items.length === 0 ? (
             <div className="flex-1 flex items-center justify-center p-6">
               <div className="text-center">
-                <h3 className="text-lg font-medium text-foreground mb-2">
-                  Your cart is empty
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  Tu carrito está vacío
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Add some products to start your purchase
+                  Agrega algunos productos para comenzar tu compra
                 </p>
-                <Button onClick={onClose} variant="outline">
-                  Continue Shopping
+                <Button onClick={onClose} variant="outline" className="rounded-full px-6 font-medium">
+                  Continuar Comprando
                 </Button>
               </div>
             </div>
@@ -169,12 +169,12 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
                 </div>
 
                 <Button 
-                  className="w-full mt-4" 
+                  className="w-full mt-4 rounded-full font-bold uppercase tracking-wide" 
                   size="lg" 
                   onClick={handleCreateCheckout} 
                   disabled={isCreatingOrder}
                 >
-                  {isCreatingOrder ? 'Processing...' : 'Checkout'}
+                  {isCreatingOrder ? 'Procesando...' : 'Finalizar Compra'}
                 </Button>
               </div>
             </>
